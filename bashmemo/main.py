@@ -1,7 +1,7 @@
 import click
 
 @click.command()
-@click.option("--autodiscover", default=1, help="Autodiscover most used commands from your bash history to bookmark")
+@click.option("--autodiscover", default=0, help="Autodiscover most used commands from your bash history to bookmark")
 @click.option('--bookmark', prompt='command',
               help='The command to bookmark')
 def run(autodiscover, bookmark):
