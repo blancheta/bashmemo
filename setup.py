@@ -22,7 +22,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    install_requires=["requests", "click==8.1.3"],
+    install_requires=["requests", "click==8.1.3", "rich==12.5.1"],
     packages=setuptools.find_packages(),
     python_requires=">=3.6",
     entry_points={

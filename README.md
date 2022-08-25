@@ -6,6 +6,13 @@ Our mantra is "Type a command only once!"
 
 ### How to use it?
 
+Pre-requisites
+```
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
+setopt EXTENDED_HISTORY
+```
+
 Bookmark a command for further use in your career
 ```
 bm -b "your command" -k "aws,codeartifact,login"
