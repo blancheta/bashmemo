@@ -1,5 +1,4 @@
 import click
-from rich.console import Console
 
 from bashmemo.utils import autodiscover_most_used_commands
 
@@ -13,8 +12,8 @@ commands = [
 ]
 
 @click.command()
-@click.option("--autodiscover", default=0, help="Autodiscover most used commands from your bash history to bookmark")
-@click.option('--bookmark', help='The command to bookmark')
+@click.option("-ad", "--autodiscover", default=0, help="Autodiscover most used commands from your bash history to bookmark")
+@click.option("-b", "--bookmark", help="The command to bookmark")
 def run(autodiscover, bookmark):
 
     if not str(autodiscover) or bookmark:
@@ -24,9 +23,7 @@ def run(autodiscover, bookmark):
         autodiscover_most_used_commands()
     else:
         keywords = input("bm-i-search (keywords separated by space): ")
-
         keywords = keywords.split(" ")
-        # Look for the command
 
         commands_selection = []
 
