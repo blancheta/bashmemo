@@ -1,15 +1,12 @@
 import click
+import requests
 
 from bashmemo.utils import autodiscover_most_used_commands
 
 import subprocess
 
 
-commands = [
-    "aws s3 ls",
-    "aws s3 ec2",
-    "ls"
-]
+commands = []
 
 @click.command()
 @click.option("-ad", "--autodiscover", default=0, help="Autodiscover most used commands from your bash history to bookmark")
@@ -18,6 +15,10 @@ def run(autodiscover, bookmark):
 
     if not str(autodiscover) or bookmark:
         raise click.ClickException('filename argument and option string are mutually exclusive!')
+
+    print("Sync local with cloud ...")
+    response = requests.get("https://bashmemo.herokuapp.com/api/bookmarks/")
+    commands = response.json()
 
     if autodiscover:
         autodiscover_most_used_commands()
@@ -30,10 +31,10 @@ def run(autodiscover, bookmark):
         for command in commands:
             cond = []
             for keyword in keywords:
-                cond.append( keyword in command)
+                cond.append( keyword in command['command'])
 
             if all(cond):
-                commands_selection.append(command)
+                commands_selection.append(command["command"])
 
         if len(commands_selection) > 1:
             print("Choose the command to execute")
