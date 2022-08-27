@@ -22,7 +22,6 @@ def run(autodiscover, bookmark):
     print("Sync local with cloud ...")
     response = requests.get("https://bashmemo.herokuapp.com/api/bookmarks/")
     commands = response.json()
-
     if autodiscover:
         autodiscover_most_used_commands()
     elif bookmark:
@@ -31,7 +30,7 @@ def run(autodiscover, bookmark):
         if not bookmark_created:
             print("Command bookmark has not been created because of an error")
         else:
-            print("New Command Bookmark saved!")
+            print("Command Bookmark saved. Oh yeah!")
     else:
         keywords = input("bm-i-search (keywords separated by space): ")
         keywords = keywords.split(" ")

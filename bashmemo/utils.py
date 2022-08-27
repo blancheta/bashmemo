@@ -50,20 +50,15 @@ def create_bookmark(command: str, keywords_input: str) -> bool:
     # request the creation of the bookmark
 
     keywords = keywords_input.split(" ")
-    print(keywords)
-    print(json.dumps([{"name": keyword} for keyword in keywords]))
     payload = {
         "command": command,
-        "keywords": json.dumps([{"name": keyword} for keyword in keywords])
+        "keywords": [{"name": keyword} for keyword in keywords]
     }
-    print(payload)
     response = requests.post(
         "https://bashmemo.herokuapp.com/api/bookmarks/",
         json=payload,
         headers={'Content-type': 'application/json'}
     )
-
-    print(response.__dict__)
 
     if response.status_code == 201:
         return True
