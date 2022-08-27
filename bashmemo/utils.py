@@ -1,4 +1,6 @@
 from pathlib import Path
+
+import requests
 from rich.console import Console
 from rich.table import Table
 
@@ -40,3 +42,26 @@ def autodiscover_most_used_commands():
     console = Console()
     console.clear()
     console.print(table)
+
+
+def create_bookmark(command: str, keywords_input: str) -> bool:
+    # create a list of keywords from string containing keywords
+    # request the creation of the bookmark
+
+    keywords = keywords_input.split(" ")
+    payload = {
+       "command": command
+    }
+    print(payload)
+    response = requests.post(
+        "https://bashmemo.herokuapp.com/api/bookmarks/",
+        json=payload,
+        headers={'Content-type': 'application/json'}
+    )
+
+    print(response.__dict__)
+
+    if response.status_code == 201:
+        return True
+    else:
+        return False

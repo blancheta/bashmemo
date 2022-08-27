@@ -1,19 +1,22 @@
 import click
 import requests
+from click_option_group import optgroup, RequiredMutuallyExclusiveOptionGroup
 
-from bashmemo.utils import autodiscover_most_used_commands
+from bashmemo.utils import autodiscover_most_used_commands, create_bookmark
 
 import subprocess
-
 
 commands = []
 
 @click.command()
+@optgroup.group('Server configuration',
+                help='The configuration of some server connection', cls=RequiredMutuallyExclusiveOptionGroup)
+@optgroup.option(
+    "--bookmark", help="The command to bookmark",
+)
 @click.option("-ad", "--autodiscover", default=0, help="Autodiscover most used commands from your bash history to bookmark")
-@click.option("-b", "--bookmark", help="The command to bookmark")
 def run(autodiscover, bookmark):
-
-    if not str(autodiscover) or bookmark:
+    if not (str(autodiscover) or bookmark):
         raise click.ClickException('filename argument and option string are mutually exclusive!')
 
     print("Sync local with cloud ...")
@@ -22,6 +25,13 @@ def run(autodiscover, bookmark):
 
     if autodiscover:
         autodiscover_most_used_commands()
+    elif bookmark:
+        keywords_input = input("Any keywords to find back this command? (separated by empty space): ")
+        bookmark_created = create_bookmark(bookmark, keywords_input)
+        if not bookmark_created:
+            print("Command bookmark has not been created because of an error")
+        else:
+            print("New Command Bookmark saved!")
     else:
         keywords = input("bm-i-search (keywords separated by space): ")
         keywords = keywords.split(" ")
