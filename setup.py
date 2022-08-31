@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fhand:
 
 setuptools.setup(
     name="bashmemo",
-    version="0.0.1",
+    version="0.0.2",
     author="Liu Zheng",
     author_email="zheng@example.com",
     description=(
@@ -27,7 +27,7 @@ setuptools.setup(
     python_requires=">=3.6",
     entry_points={
         "console_scripts": [
-            "bm = bashmemo.main:run",
+            "bm = src.bashmemo.main:run",
         ]
     }
 )

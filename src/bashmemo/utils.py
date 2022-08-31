@@ -5,6 +5,8 @@ import requests
 from rich.console import Console
 from rich.table import Table
 
+from src.bashmemo.config import domain
+
 
 def autodiscover_most_used_commands():
 
@@ -45,19 +47,23 @@ def autodiscover_most_used_commands():
     console.print(table)
 
 
-def create_bookmark(command: str, keywords_input: str) -> bool:
+def create_bookmark(command: str, keywords_input: str, user_id, token) -> bool:
     # create a list of keywords from string containing keywords
     # request the creation of the bookmark
 
     keywords = keywords_input.split(" ")
     payload = {
         "command": command,
-        "keywords": [{"name": keyword} for keyword in keywords]
+        "keywords": [{"name": keyword} for keyword in keywords],
+        "object_id": user_id
     }
     response = requests.post(
-        "https://bashmemo.herokuapp.com/api/bookmarks/",
+        f"{domain}/api/bookmarks/",
         json=payload,
-        headers={'Content-type': 'application/json'}
+        headers={
+            "Content-type": "application/json",
+            "Authorization": f"Bearer {token}"
+        }
     )
 
     if response.status_code == 201:

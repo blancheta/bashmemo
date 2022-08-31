@@ -15,7 +15,8 @@ setopt EXTENDED_HISTORY
 
 Bookmark a command for further use in your career
 ```
-bm -b "your command" -k "aws,codeartifact,login"
+bm -b "your command"
+Any keywords to find back this command? (separated by empty space): aws list
 ```
 
 Search for a bookmarked command
