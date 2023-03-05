@@ -4,6 +4,12 @@ Bookmark commands for later reuse. Command will be stored in the cloud.
 Like that if you change your laptop. You will be able to get them back.
 Our mantra is "Type a command only once!"
 
+Install me
+
+```
+pip install git+https://github.com/blancheta/bashmemo.git#egg=bashmemo
+```
+
 ### How to use it?
 
 Pre-requisites
