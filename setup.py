@@ -6,8 +6,8 @@ with open("README.md", "r", encoding="utf-8") as fhand:
 setuptools.setup(
     name="bashmemo",
     version="0.0.2",
-    author="Liu Zheng",
-    author_email="zheng@example.com",
+    author="Alexandre Blanchet",
+    author_email="alexandreblanchet@upidev.fr",
     description=(
         "One command once. BashMemo memorises commands for you."
         "Access it from anywhere logging with your github account"),
