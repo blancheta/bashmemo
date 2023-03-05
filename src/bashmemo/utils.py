@@ -1,4 +1,3 @@
-import json
 from pathlib import Path
 
 import requests
@@ -51,6 +50,7 @@ def create_bookmark(command: str, keywords_input: str, user_id, token) -> bool:
     # create a list of keywords from string containing keywords
     # request the creation of the bookmark
 
+    print(command)
     keywords = keywords_input.split(" ")
     payload = {
         "command": command,

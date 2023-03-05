@@ -1,3 +1,4 @@
+import argparse
 import os
 from os.path import exists
 import pickle
@@ -14,12 +15,21 @@ import subprocess
 
 commands = []
 
+parser = argparse.ArgumentParser(
+                    prog = 'Bashmemo',
+                    description = 'Second brain to remind commands',
+                    epilog = '')
+parser.add_argument('-b', '--bookmark', action='store_true')
+parser.add_argument('-ad', '--autodiscover')
 
 
-@click.command()
-@click.option("-b", "--bookmark", help="Bookmark a command")
-@click.option("-ad", "--autodiscover", default=0, help="Autodiscover most used commands from your bash history to bookmark")
-def run(autodiscover, bookmark):
+def run():
+    args = parser.parse_args()
+    autodiscover = args.autodiscover
+    bookmark = args.bookmark
+
+    if bookmark is True:
+        bookmark = input("Command to save: ")
 
     if not (str(autodiscover) or bookmark):
         raise click.ClickException('filename argument and option string are mutually exclusive!')
@@ -55,6 +65,7 @@ def run(autodiscover, bookmark):
         autodiscover_most_used_commands()
     elif bookmark:
         keywords_input = input("Any keywords to find back this command? (separated by empty space): ")
+        print(bookmark)
         bookmark_created = create_bookmark(bookmark, keywords_input, user_id, token)
         if not bookmark_created:
             print("Command bookmark has not been created because of an error")
