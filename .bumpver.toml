@@ -1,7 +1,0 @@
-[files]
-files = ["pyproject.toml", "README.md"]
-
-# For README.md file, define the regex pattern to match version format
-[files."README.md"]
-pattern = r"(v\d{4}\.\d{4}-[a-zA-Z]+)"  # Update with the regex matching your version format
-replacement = "v{version}"
