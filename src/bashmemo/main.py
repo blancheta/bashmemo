@@ -101,7 +101,7 @@ def run():
 
         command_parts = execute_command.split(' ')
 
-        print("\033[A                                          \033[A")
+        # print("\033[A                                          \033[A")
 
         for _ in commands_selection:
             print("\033[A                             \033[A")
