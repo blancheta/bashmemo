@@ -6,7 +6,7 @@ requires = [
 ]
 
 [tool.bumpver]
-current_version = "2024.1033"
+current_version = "2024.1033-alpha"
 version_pattern = "YYYY.BUILD[-TAG]"
 
 
@@ -22,7 +22,7 @@ files = ["pyproject.toml", "README.md"]
 [tool.bumpver.files."README.md"]
 pattern = '(v\d{4}\.\d{4}-[a-zA-Z]+)'  # Update with the regex matching your version format
 replacement = "v{version}"
-#
+
 #replacement = "v{version}"
 
 # To modify the version in files
