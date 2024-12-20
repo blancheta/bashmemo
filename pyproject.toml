@@ -21,7 +21,7 @@ files = ["README.md"]
 # Define the regular expression pattern for the version in the README.md
 # This example assumes that the version in README.md is in the format "v1.2.3"
 [files."README.md"]
-pattern = r"\d{4}\.\d{4}-(\w+))"  # Pattern to match version like "v1.2.3"
+pattern = r"\d{4}\.\d{4}-[a-zA-Z0-9]+"  # Pattern to match version like "v1.2.3"
 replacement = "{version}"       # Replacement format for the new version
 
 # To modify the version in files
