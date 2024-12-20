@@ -18,16 +18,18 @@ push = true
 # Define the files where the version should be updated
 files = ["pyproject.toml", "README.md"]
 
+# To modify the version in files
 [tool.bumpver.file_patterns]
 "pyproject.toml" = [
     'current_version = "{version}"',
 ]
+
 #"setup.py" = [
 #    "{version}",
 #    "{pep440_version}",
 #]
-#"README.md" = [
-#    "{version}",
-#    "{pep440_version}",
-#]
+"README.md" = [
+    "Bash Memo {version}",
+    "{pep440_version}",
+]
 
