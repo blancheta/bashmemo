@@ -1,4 +1,4 @@
-# Bash Memo 2024.1014-alpha
+# Bash Memo v2024.1014-alpha
 
 Bookmark commands for later reuse. Command will be stored in the cloud.
 Like that if you change your laptop. You will be able to get them back.
