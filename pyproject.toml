@@ -16,6 +16,16 @@ commit = true
 tag = true
 push = true
 
+[files.bumpver]
+files = ["README.md"]
+
+# Define the files where the version should be updated
+[files.bumpver."README.md"]
+#pattern = '(v\d{4}\.\d{4}-[a-z]+)'
+pattern = '(v\d{4})'
+
+replacement = "v{version}"
+
 # To modify the version in files
 #[tool.bumpver.file_patterns]
 #"pyproject.toml" = [
