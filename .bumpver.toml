@@ -3,6 +3,8 @@ files = ["README.md"]
 
 # Define the files where the version should be updated
 [files."README.md"]
-pattern = '(v\d{4}\.\d{4}-[a-z]+)'
+#pattern = '(v\d{4}\.\d{4}-[a-z]+)'
+pattern = '(v\d{4})'
+
 replacement = "v{version}"       # Replacement format for the new version
 
