@@ -14,7 +14,7 @@ tag = true
 push = true
 
 [files]
-files = ["pyproject.toml", "README.md"]
+files = ["README.md"]
 
 # Define the files where the version should be updated
 files = ["README.md"]
