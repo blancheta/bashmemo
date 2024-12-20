@@ -7,7 +7,7 @@ requires = [
 ]
 
 [tool.bumpver]
-current_version = "2024.1010-alpha"
+current_version = "2024.1011-alpha"
 version_pattern = "YYYY.BUILD[-TAG]"
 commit_message = "bump version {old_version} -> {new_version}"
 commit = true
@@ -16,7 +16,13 @@ push = true
 
 [files]
 # Define the files where the version should be updated
-files = ["pyproject.toml", "README.md"]
+files = ["README.md"]
+
+# Define the regular expression pattern for the version in the README.md
+# This example assumes that the version in README.md is in the format "v1.2.3"
+[files."README.md"]
+pattern = r"(\d{4}\.\d{4}-[a-zA-Z]+)"  # Pattern to match version like "v1.2.3"
+replacement = "{version}"       # Replacement format for the new version
 
 # To modify the version in files
 [tool.bumpver.file_patterns]
@@ -32,4 +38,6 @@ files = ["pyproject.toml", "README.md"]
     "# Bash Memo {version}",
     "{pep440_version}",
 ]
+
+
 
