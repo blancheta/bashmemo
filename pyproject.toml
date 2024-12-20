@@ -2,7 +2,6 @@
 requires = [
     "setuptools",  #Use to build python library into a python package
     "wheel",   # Use to distribute packages
-#    "toml"
     "bumpver"
 ]
 
