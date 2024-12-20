@@ -7,7 +7,7 @@ requires = [
 ]
 
 [tool.bumpver]
-current_version = "2024.1009-alpha"
+current_version = "2024.1010-alpha"
 version_pattern = "YYYY.BUILD[-TAG]"
 commit_message = "bump version {old_version} -> {new_version}"
 commit = true
@@ -29,7 +29,7 @@ files = ["pyproject.toml", "README.md"]
 #    "{pep440_version}",
 #]
 "README.md" = [
-    "Bash Memo {version}",
+    "# Bash Memo {version}",
     "{pep440_version}",
 ]
 
