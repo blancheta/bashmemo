@@ -1,10 +1,7 @@
 [files]
-files = ["README.md"]
+files = ["pyproject.toml", "README.md"]
 
-# Define the files where the version should be updated
+# For README.md file, define the regex pattern to match version format
 [files."README.md"]
-#pattern = '(v\d{4}\.\d{4}-[a-z]+)'
-pattern = '(v\d{4})'
-
-replacement = "v{version}"       # Replacement format for the new version
-
+pattern = r"(v\d{4}\.\d{4}-[a-zA-Z]+)"  # Update with the regex matching your version format
+replacement = "v{version}"
