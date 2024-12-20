@@ -19,9 +19,9 @@ push = true
 files = ["pyproject.toml", "README.md"]
 
 # For README.md file, define the regex pattern to match version format
-[tool.bumpver.files."README.md"]
-pattern = '(\d{4}\.\d{4}-[a-zA-Z]+)'  # Update with the regex matching your version format
-replacement = "{version}"
+#[tool.bumpver.files."README.md"]
+#pattern = '(\d{4}\.\d{4}-[a-zA-Z]+)'  # Update with the regex matching your version format
+#replacement = "{version}"
 
 #replacement = "v{version}"
 
