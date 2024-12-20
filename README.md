@@ -1,4 +1,4 @@
-Version: v2024
+Version: v2024.1024
 
 Bookmark commands for later reuse. Command will be stored in the cloud.
 Like that if you change your laptop. You will be able to get them back.
