@@ -7,12 +7,16 @@ requires = [
 ]
 
 [tool.bumpver]
-current_version = "2024.1006-alpha"
+current_version = "2024.1007-alpha"
 version_pattern = "YYYY.BUILD[-TAG]"
 commit_message = "bump version {old_version} -> {new_version}"
 commit = true
 tag = true
 push = true
+
+[files]
+# Define the files where the version should be updated
+files = ["pyproject.toml", "README.md"]
 
 [tool.bumpver.file_patterns]
 "pyproject.toml" = [
@@ -22,8 +26,8 @@ push = true
 #    "{version}",
 #    "{pep440_version}",
 #]
-"README.md" = [
-    "{version}",
-    "{pep440_version}",
-]
+#"README.md" = [
+#    "{version}",
+#    "{pep440_version}",
+#]
 
