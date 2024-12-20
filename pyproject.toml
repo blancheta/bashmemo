@@ -6,7 +6,7 @@ requires = [
 ]
 
 [tool.bumpver]
-current_version = "2024.1031-alpha"
+current_version = "2024.1032"
 version_pattern = "YYYY.BUILD[-TAG]"
 
 
