@@ -17,7 +17,7 @@ push = true
 files = ["README.md"]
 
 # Define the files where the version should be updated
-files = ["README.md"]
+[files."README.md"]
 pattern = '(v\d{4}\.\d{4}-[a-z]+)'
 replacement = "v{version}"       # Replacement format for the new version
 
