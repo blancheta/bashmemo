@@ -6,25 +6,24 @@ requires = [
 ]
 
 [tool.bumpver]
-#current_version = "2024.1023-alpha"
-#version_pattern = "YYYY.BUILD[-TAG]"
-current_version = "2024.1029"
-version_pattern = "YYYY.BUILD"
+current_version = "2024.1023-alpha"
+version_pattern = "YYYY.BUILD[-TAG]"
+
 
 commit_message = "bump version {old_version} -> {new_version}"
 commit = true
 tag = true
 push = true
 
-[files.bumpver]
-files = ["README.md"]
-
-# Define the files where the version should be updated
-[files.bumpver."README.md"]
-#pattern = '(v\d{4}\.\d{4}-[a-z]+)'
-pattern = '(v\d{4}\.\d{4})'
-
-replacement = "v{version}"
+#[files.bumpver]
+#files = ["README.md"]
+#
+## Define the files where the version should be updated
+#[files.bumpver."README.md"]
+##pattern = '(v\d{4}\.\d{4}-[a-z]+)'
+#pattern = '(v\d{4}\.\d{4})'
+#
+#replacement = "v{version}"
 
 # To modify the version in files
 #[tool.bumpver.file_patterns]
