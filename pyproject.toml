@@ -1,3 +1,8 @@
+[project]
+name = "your-package-name"
+version = "0.1.0"
+
+
 [build-system]
 requires = [
     "setuptools",  #Use to build python library into a python package
@@ -22,6 +27,9 @@ files = ["pyproject.toml", "README.md"]
 [tool.bumpver.files."README.md"]
 pattern = 'v(\d{4}\.\d{4}-[a-zA-Z]+)'  # Update with the regex matching your version format
 replacement = "v{version}"
+
+[project.scripts]
+bmm = "src.bashmemo.main:run"
 
 # To modify the version in files
 #[tool.bumpver.file_patterns]
